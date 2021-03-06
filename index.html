@@ -379,23 +379,19 @@
   
 
 
-  <a href="/blog-page/2021/03/06/9、前端基础之Webpack/">
+  <a href="/blog-page/2021/03/06/24、前端基础之ES6（Class类）/">
     <h2 class="post-title">
-      9、前端基础之Webpack
+      24、前端基础之ES6（Class类）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      html-webpack-plugin插件
-html-webpack-plugin插件作用
+      Class的基本语法
+1.简介
 
-
-为html文件中引入的外部资源如script、link动态添加每次compile后的hash，防止引用缓存的外部文件问题
-可以生成创建html入口文件，比如单页面可以生成一个html文件入口，配置N个html-webpack-plugin可以生成N个页面入口
-
-
-html-webpack-plug......
+在ES6中可以通过class关键字定义类。可以使用new关键字创建class的对象。程序示例：
+12345678class A&#123;&#125;let a = new A();console.log(a instanceof A);    // trueconsole.log(a.constructor === A.prototype.construc......
     </div>
   </a>
   
@@ -407,7 +403,7 @@ html-webpack-plug......
     
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#WebPack" title="WebPack">WebPack</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -424,25 +420,19 @@ html-webpack-plug......
   
 
 
-  <a href="/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/">
+  <a href="/blog-page/2021/03/06/23、前端基础之ES6（Generator函数）/">
     <h2 class="post-title">
-      8、前端基础之React Native（navigation对象）
+      23、前端基础之ES6（Generator函数）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      navigation对象的方法
-获取navigation对象：
+      Generator函数的语法
+1.简介
 
-1const &#123;navigation&#125; = this.props;
-
-
-navigation对象的方法
-
-
-navigate - go to another screen, figures out the action it needs to take to do it
-goBack - close act......
+Generator函数是ES6提供的一种异步编程解决方案。Generator()函数是一个状态机，内部封装了多种状态，执行Generator函数的时候会返回一个遍历器对象。可以依次遍历Generator内部的状态。
+Generator()函数本身不执行，返回的也不是函数运行的结果，而是一个指向内部状态的指针对象。通过调用指针对象的next，就可以遍历......
     </div>
   </a>
   
@@ -454,7 +444,7 @@ goBack - close act......
     
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#React Native" title="React Native">React Native</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -471,25 +461,24 @@ goBack - close act......
   
 
 
-  <a href="/blog-page/2021/03/06/7、前端基础之React-Native-Stack-Navigator/">
+  <a href="/blog-page/2021/03/06/22、前端基础之ES6（Iterator迭代器）/">
     <h2 class="post-title">
-      7、前端基础之React Native(Stack Navigator)
+      22、前端基础之ES6（Iterator迭代器）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      Stack Navigator
-新建一个React Native项目：
+      Iterator和for…of循环
+1.Iterator（遍历器）的概念
 
-1react-native init ReactNavigationDemo
+遍历器（Iterator）是一种接口，可以为不同的数据结构提供统一的访问机制。只要是实现了Iterator接口的数据结构就可以完成遍历的操作。Iterator遍历器的作用：
 
+为各种数据结构提供统一的访问接口。
+使数据结构中的元素可以按顺序排列。
+创造出一种新的遍历循环的方式，即for…of。
 
-安装npm依赖
-
-12npm install react-navigation --savenpm install react-native-gesture-handler react-native-reanimated --save
-
-......
+Iterator遍历......
     </div>
   </a>
   
@@ -501,7 +490,7 @@ goBack - close act......
     
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#React Native" title="React Native">React Native</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -518,25 +507,26 @@ goBack - close act......
   
 
 
-  <a href="/blog-page/2021/03/06/6、前端基础之React-Hooks/">
+  <a href="/blog-page/2021/03/06/21、前端基础之ES6（Promise）/">
     <h2 class="post-title">
-      6、前端基础之React Hooks
+      21、前端基础之ES6（Promise）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      React Hooks简介Hook是React 16.8新增加的新特性，可以让开发者在不用编写class组件的情况下使用state以及其他的一些在类组件中才可以使用的属性。
+      Promise对象
+1.Promise的含义
 
-Hooks的特点
+Promise对象有以下的几个特点：
+
+对象的状态不受影响。Promise对象代表了一个异步操作，有三种状态：pending(进行中),fulfilled(已经成功的)和rejected(失败的)。只有异步操作的结果能决定当前是处于哪一种状态，任何其他的操作都不能改变这样的状态。
+一旦状态发生了改变就不会再次发生改变了。
 
 
-完全可选的，hooks的使用是非必须的，可以根据实际的需要进行选择使用。
-Hooks是100%向后兼容的，并且不包含任何的破坏性的改动。
-React Hook已经在16.8的版本中发布了。
+2.基本用法
 
-
-使......
+可......
     </div>
   </a>
   
@@ -548,7 +538,7 @@ React Hook已经在16.8的版本中发布了。
     
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#React框架" title="React框架">React框架</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -565,27 +555,22 @@ React Hook已经在16.8的版本中发布了。
   
 
 
-  <a href="/blog-page/2021/03/06/5、前端基础之JavaScript基础/">
+  <a href="/blog-page/2021/03/06/20、前端基础之ES6（Proxy代理）/">
     <h2 class="post-title">
-      5、前端基础之JavaScript基础
+      20、前端基础之ES6（Proxy代理）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-1、事件捕获
+      Proxy
+1.概述
 
-事件捕获指的是，事件流从HTML文档的跟节点，逐级向下传递，一直传递到触发事件的那个元素的过程，称为事件捕获。
+Proxy用于修改某些操作的默认行为，在目标对象之前代理某些操作，Proxy()构造函数可以用来创建Proxy实例。程序示例：
+1var proxy = new Proxy(target, handler); // target表示需要拦截的目标对象，handler也是一个对象用来制定拦截行为。
+Proxy支持的拦截操作列表：
 
-2、DOM事件流
-
-在DOM2中规定，事件流分为三个阶段：事件捕获阶段、处于目标元素阶段和事件冒泡阶段。
-
-3、DOM0级事件处理程序
-
-DOM0级事件处理程序指的是，将一个事件处理函数直接赋值给HTML元素的事件属性。程序实例：
-12345var btn = ......
+get(target, propKey......
     </div>
   </a>
   
@@ -595,11 +580,9 @@ DOM0级事件处理程序指的是，将一个事件处理函数直接赋值给H
   </p>
   <div class="tags">
     
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript">JavaScript</a>
-    
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript">ECMAScript</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -616,28 +599,20 @@ DOM0级事件处理程序指的是，将一个事件处理函数直接赋值给H
   
 
 
-  <a href="/blog-page/2021/03/06/4、前端基础之JavaScript基础/">
+  <a href="/blog-page/2021/03/06/19、前端基础之ES6（Map和Set）/">
     <h2 class="post-title">
-      4、前端基础之JavaScript基础
+      19、前端基础之ES6（Map和Set）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-1、间歇调用和超时调用
+      Set和Map数据结构
+1.Set
 
-setTimeout()表示超时调用，超过指定的时间之后调用函数。
-setInterval()表示间隔调用，时间达到指定的间隔时间就会调用这个函数。
-
-2、DOM
-
-document节点是每一个文档的根节点，document节点只有一个子节点，也就是&lt;html&gt;节点，称之为文档元素。
-
-3、DOM节点操作的相关方法
-
-
-appendChild():添加......
+Set是ES6新提供的数据结构，类似于数组，但是Set集合里面的值都是唯一的，是不重合的。
+Set()构造函数可以用来生成一个Set结构，程序示例：
+1234567const s = new Set();[2,3,4,5,2,2].forEach((x)=&gt;&#123;s.add(x)&#125;);for(let i of s)&#123;   ......
     </div>
   </a>
   
@@ -647,11 +622,9 @@ appendChild():添加......
   </p>
   <div class="tags">
     
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript">JavaScript</a>
-    
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript">ECMAScript</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -668,29 +641,20 @@ appendChild():添加......
   
 
 
-  <a href="/blog-page/2021/03/06/3、前端基础之JavaScript基础/">
+  <a href="/blog-page/2021/03/06/18、前端基础之ES6（Symbol）/">
     <h2 class="post-title">
-      3、前端基础之JavaScript基础
+      18、前端基础之ES6（Symbol）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
- 1、对象的属性类型
+      Symbol
+1.概述
 
 
-数据属性
-访问器属性
-
-（1）数据属性
-
-[[Configurable]]:表示能否通过delete删除一个对象的属性，默认值是true。
-[[Enumerable]]:表示对象的属性是否可以通过for-in循环进行枚举，默认是true。
-[[Writable]]:表示是否可以修改对象的属性值，默认是true。
-[[Value]]:表示属性的属性值。
-
-以上的几个......
+在ES5中由于对象的属性名称是字符串，所以会存在属性名冲突的情况。ES6中引入Symbol的原因就是解决对象属性名称冲突的问题。ES6引入的Symbol数据类型表示一个独一无二的值。
+Symbol类型是JavaScript的第七种数据类型，前6种数据类型分别是：undefined,null,布尔值(bool),字符串(string,数值(number),对象(Ob......
     </div>
   </a>
   
@@ -700,11 +664,9 @@ appendChild():添加......
   </p>
   <div class="tags">
     
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript">JavaScript</a>
-    
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript">ECMAScript</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -721,37 +683,23 @@ appendChild():添加......
   
 
 
-  <a href="/blog-page/2021/03/06/2、前端基础之JavaScript基础/">
+  <a href="/blog-page/2021/03/06/17、前端基础之ES6（对象的新增方法）/">
     <h2 class="post-title">
-      2、前端基础之JavaScript基础
+      17、前端基础之ES6（对象的新增方法）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-1、typeof可能的检测结果
+      对象的新增方法
+1.Object.is()
 
+Object.is()方法可以用于对两个值进行比较与严格相等的用法是一样的。在Object.is()中NaN是等于自身的，但是在严格相等运算符中NaN与自身是不相等的。
 
-undefined: 值未定义
-boolean:值是布尔值
-string:值是字符串
-number:值是数字
-object:值是对象
-function:值是函数
+2.Object.assign()
 
-
-2、关于NaN
-
-
-任何涉及NaN的操作，最后的结果都是NaN。
-NaN不与任何值相等，包括NaN与其自身也不相等。
-
-
-3、将一个值转换成字符串的方法
-
-
-使用.toString()的方式......
+Object.assign()方法可以用于对象的合并，可以将源对象中所有可枚举的属性复制到目标对象中。
+12345678910111213......
     </div>
   </a>
   
@@ -761,11 +709,9 @@ NaN不与任何值相等，包括NaN与其自身也不相等。
   </p>
   <div class="tags">
     
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript">JavaScript</a>
-    
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript">ECMAScript</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -782,28 +728,20 @@ NaN不与任何值相等，包括NaN与其自身也不相等。
   
 
 
-  <a href="/blog-page/2021/03/06/前端基础（1）JavaScript基础/">
+  <a href="/blog-page/2021/03/06/16、前端基础之ES6（对象的扩展）/">
     <h2 class="post-title">
-      1、前端基础之JavaScript基础
+      16、前端基础之ES6（对象的扩展）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-1、JavaScript的三个组成部分
+      数组的扩展
+1.扩展运算符
 
+扩展运算符是三个点（…）可以将一个数组转换成用逗号分隔的参数序列。扩展运算符的使用：
 
-ECMAScript（核心）
-DOM(文档对象模型, Document object model)
-BOM(浏览器对象模型, Browser Object model)
-
-ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和接口，BOM提供与浏览器交互的方法和接口。
-
-2、在浏览器中网页的加载和渲染的过程
-
-
-浏览器通过HTTP......
+复制数组：可以使用数组扩展运算符对数组元素进行复制得到一个全新的与原来的数组不相等的数组，而不是将新的数组指向原有数组的引用。1234const arr1 = [1,2,3];const arr2 = [...arr1];console.log(arr1 === arr2);......
     </div>
   </a>
   
@@ -813,11 +751,51 @@ ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和�
   </p>
   <div class="tags">
     
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript">JavaScript</a>
+    <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+    
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/blog-page/2021/03/06/15、前端基础之ES6（数组的扩展）/">
+    <h2 class="post-title">
+      15、前端基础之ES6（数组的扩展）
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      数组的扩展
+1.扩展运算符
+
+扩展运算符是三个点（…）可以将一个数组转换成用逗号分隔的参数序列。扩展运算符的使用：
+
+复制数组：可以使用数组扩展运算符对数组元素进行复制得到一个全新的与原来的数组不相等的数组，而不是将新的数组指向原有数组的引用。1234const arr1 = [1,2,3];const arr2 = [...arr1];console.log(arr1 === arr2);......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 艾欧尼亚前端召唤师 on
+    2021-03-06
+  </p>
+  <div class="tags">
     
     <a href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
     
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript">ECMAScript</a>
+    <a href="/blog-page/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -830,6 +808,10 @@ ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和�
   <!-- Pager -->
   <ul class="pager">
     
+    
+    <li class="next">
+      <a href="/blog-page/archives/2/">Older Posts &rarr;</a>
+    </li>
     
   </ul>
 
@@ -876,7 +858,7 @@ ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和�
     
     
     
-    <a href="/blog-page/tags/#前端基础" title="前端基础" rel="9">前端基础</a>
+    <a href="/blog-page/tags/#前端基础" title="前端基础" rel="24">前端基础</a>
     
     
     
@@ -893,6 +875,10 @@ ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和�
     
     
     <a href="/blog-page/tags/#React框架" title="React框架" rel="1">React框架</a>
+    
+    
+    
+    <a href="/blog-page/tags/#ES6" title="ES6" rel="15">ES6</a>
     
     
   </div>
@@ -964,24 +950,24 @@ ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和�
 <div class="widget">
   <ul>
     
-    <a href="2021/03/06/9%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BWebpack/">
-      <li>9、前端基础之Webpack</li>
+    <a href="2021/03/06/24%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BES6%EF%BC%88Class%E7%B1%BB%EF%BC%89/">
+      <li>24、前端基础之ES6（Class类）</li>
     </a>
     
-    <a href="2021/03/06/8%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact-Native%EF%BC%88navigation%E5%AF%B9%E8%B1%A1%EF%BC%89/">
-      <li>8、前端基础之React Native（navigation对象）</li>
+    <a href="2021/03/06/23%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BES6%EF%BC%88Generator%E5%87%BD%E6%95%B0%EF%BC%89/">
+      <li>23、前端基础之ES6（Generator函数）</li>
     </a>
     
-    <a href="2021/03/06/7%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact-Native-Stack-Navigator/">
-      <li>7、前端基础之React Native(Stack Navigator)</li>
+    <a href="2021/03/06/22%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BES6%EF%BC%88Iterator%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%89/">
+      <li>22、前端基础之ES6（Iterator迭代器）</li>
     </a>
     
-    <a href="2021/03/06/6%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact-Hooks/">
-      <li>6、前端基础之React Hooks</li>
+    <a href="2021/03/06/21%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BES6%EF%BC%88Promise%EF%BC%89/">
+      <li>21、前端基础之ES6（Promise）</li>
     </a>
     
-    <a href="2021/03/06/5%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BJavaScript%E5%9F%BA%E7%A1%80/">
-      <li>5、前端基础之JavaScript基础</li>
+    <a href="2021/03/06/20%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BES6%EF%BC%88Proxy%E4%BB%A3%E7%90%86%EF%BC%89/">
+      <li>20、前端基础之ES6（Proxy代理）</li>
     </a>
     
   </ul>
@@ -999,7 +985,7 @@ ECMAScript提供核心的语言功能，DOM提供操作网页内容的方法和�
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/blog-page/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/03/">三月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/03/">三月 2021</a><span class="archive-list-count">24</span></li></ul>
     </div>
 
 
