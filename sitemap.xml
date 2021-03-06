@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite-url/categories/index.html</loc>
+    <loc>https://zpp-dev.github.io/categories/index.html</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/index.html</loc>
+    <loc>https://zpp-dev.github.io/tags/index.html</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/archive/index.html</loc>
+    <loc>https://zpp-dev.github.io/archive/index.html</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/about/index.html</loc>
+    <loc>https://zpp-dev.github.io/about/index.html</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/2021/03/06/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89JavaScript%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://zpp-dev.github.io/2021/03/06/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89JavaScript%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/404.html</loc>
+    <loc>https://zpp-dev.github.io/404.html</loc>
     
     <lastmod>2021-02-09</lastmod>
     
@@ -45,7 +45,7 @@
   
 
   <url>
-    <loc>http://yoursite-url/</loc>
+    <loc>https://zpp-dev.github.io/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -53,21 +53,21 @@
 
   
   <url>
-    <loc>http://yoursite-url/tags/JavaScript/</loc>
+    <loc>https://zpp-dev.github.io/tags/JavaScript/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://zpp-dev.github.io/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/ECMAScript/</loc>
+    <loc>https://zpp-dev.github.io/tags/ECMAScript/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
