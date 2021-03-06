@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../../css/highlight.css">
-<link rel="stylesheet" href="../../../css/widget.css">
-<link rel="stylesheet" href="../../../css/rocket.css">
-<link rel="stylesheet" href="../../../css/signature.css">
-<link rel="stylesheet" href="../../../css/catalog.css">
-<link rel="stylesheet" href="../../../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/archives/2021/03/">
+  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/">
   <title>
     
-    艾欧尼亚前端召唤师
+    8、前端基础之React Native（navigation对象） - 艾欧尼亚前端召唤师
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -289,8 +289,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/blog-page/img/header_img/archive_bg2.jpg');
+       /*post*/
+        background-image: url('');
       
     }
 
@@ -308,10 +308,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>艾欧尼亚前端召唤师</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">艾欧尼亚前端召唤师</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+              
+              <a class="tag" href="/blog-page/tags/#React Native" title="React Native">React Native</a>
+              
+            </div>
+            <h1>8、前端基础之React Native（navigation对象）</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 艾欧尼亚前端召唤师 on
+              2021-03-06
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">2</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">397</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -352,365 +386,303 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h4 id="navigation对象的方法"><a href="#navigation对象的方法" class="headerlink" title="navigation对象的方法"></a>navigation对象的方法</h4><blockquote>
+<p>获取navigation对象：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;navigation&#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
 
-      
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<blockquote>
+<p>navigation对象的方法</p>
+</blockquote>
+<ul>
+<li>navigate - go to another screen, figures out the action it needs to take to do it</li>
+<li>goBack - close active screen and move back in the stack</li>
+<li>addListener - subscribe to updates to navigation lifecycle</li>
+<li>isFocused - function that returns true if the screen is focused and false otherwise.</li>
+<li>state - current state/routes</li>
+<li>setParams - make changes to route’s params</li>
+<li>getParam - get a specific param with fallback</li>
+<li>dispatch - send an action to router</li>
+<li>dangerouslyGetParent - function that returns the parent navigator, if any</li>
+<li>push - push a new route onto the stack</li>
+<li>pop - go back in the stack</li>
+<li>popToTop - go to the top of the stack</li>
+<li>replace - replace the current route with a new one</li>
+<li>reset - wipe the navigator state and replace it with the result of several actions</li>
+<li>dismiss - dismiss the current stack</li>
+<li>openDrawer - open the drawer</li>
+<li>closeDrawer - close the drawer</li>
+<li>toggleDrawer - toggle the state, ie. switch from closed to open and vice versa</li>
+<li>willFocus - the screen will focus</li>
+<li>didFocus - the screen focused (if there was a transition, the transition completed)</li>
+<li>willBlur - the screen will be unfocused</li>
+<li>didBlur - the screen unfocused (if there was a transition, the transition completed)</li>
+</ul>
+<blockquote>
+<p>通过navigation进行路由跳转传参和获取参数</p>
+</blockquote>
+<ul>
+<li>传参：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;navigation&#125; = <span class="keyword">this</span>.props;</span><br><span class="line">navigation.navigate(<span class="string">'routeName'</span>, &#123;</span><br><span class="line">    <span class="string">"paramName"</span>: <span class="string">"paramValue"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"><span class="keyword">this</span>.props.navigation.setParams(&#123;<span class="attr">otherParam</span>: <span class="string">'Updated!'</span>&#125;);</span><br></pre></td></tr></table></figure>
 
-      
+<ul>
+<li>参数值获取：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;navigation&#125; = <span class="keyword">this</span>.props;</span><br><span class="line"><span class="keyword">const</span> paramValue = navigation.getParam(<span class="string">'paramName'</span>);</span><br></pre></td></tr></table></figure>
 
-      <!-- 归档列表 -->
+<h4 id="使用NavigationEvents"><a href="#使用NavigationEvents" class="headerlink" title="使用NavigationEvents"></a>使用NavigationEvents</h4><p>navigation支持的事件监听有以下几种：</p>
+<ul>
+<li>navigation - navigation props (optional, defaults to reading from React context)</li>
+<li>onWillFocus - event listener</li>
+<li>onDidFocus - event listener</li>
+<li>onWillBlur - event listener</li>
+<li>onDidBlur - event listener</li>
+</ul>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; View &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NavigationEvents &#125; <span class="keyword">from</span> <span class="string">'react-navigation'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyScreen = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;View&gt;</span><br><span class="line">    &lt;NavigationEvents</span><br><span class="line">      onWillFocus=&#123;payload =&gt; <span class="built_in">console</span>.log(<span class="string">'will focus'</span>,payload)&#125;</span><br><span class="line">      onDidFocus=&#123;payload =&gt; <span class="built_in">console</span>.log(<span class="string">'did focus'</span>,payload)&#125;</span><br><span class="line">      onWillBlur=&#123;payload =&gt; <span class="built_in">console</span>.log(<span class="string">'will blur'</span>,payload)&#125;</span><br><span class="line">      onDidBlur=&#123;payload =&gt; <span class="built_in">console</span>.log(<span class="string">'did blur'</span>,payload)&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">    &#123;<span class="comment">/*</span></span><br><span class="line"><span class="comment">      Your view code</span></span><br><span class="line"><span class="comment">    */</span>&#125;</span><br><span class="line">  &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default MyScreen;</span></span><br></pre></td></tr></table></figure>
 
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+<h6 id="react-navigation支持的导航的种类"><a href="#react-navigation支持的导航的种类" class="headerlink" title="react-navigation支持的导航的种类"></a>react-navigation支持的导航的种类</h6><ul>
+<li>createStackNavigator</li>
+<li>createSwitchNavigator</li>
+<li>createDrawerNavigator</li>
+<li>createBottomTabNavigator</li>
+<li>createMaterialBottomTabNavigator</li>
+<li>createMaterialTopTabNavigator</li>
+</ul>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/9、前端基础之Webpack/" style="color: #0085a1">
-              <span>
-                9、前端基础之Webpack
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="previous">
+            <a href="/blog-page/2021/03/06/9、前端基础之Webpack/" data-toggle="tooltip" data-placement="top" title="9、前端基础之Webpack">&larr; Previous Post</a>
           </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/" style="color: #0085a1">
-              <span>
-                8、前端基础之React Native（navigation对象）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/7、前端基础之React-Native-Stack-Navigator/" style="color: #0085a1">
-              <span>
-                7、前端基础之React Native(Stack Navigator)
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/6、前端基础之React-Hooks/" style="color: #0085a1">
-              <span>
-                6、前端基础之React Hooks
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/5、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                5、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/4、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                4、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/3、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                3、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/2、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                2、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/前端基础（1）JavaScript基础/" style="color: #0085a1">
-              <span>
-                1、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="next">
+            <a href="/blog-page/2021/03/06/7、前端基础之React-Native-Stack-Navigator/" data-toggle="tooltip" data-placement="top" title="7、前端基础之React Native(Stack Navigator)">Next Post &rarr;</a>
           </li>
           
         </ul>
-      </div>
-      
 
-
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!--   -->
-<h5><a href="/blog-page/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-<!--   -->
-
-        <hr>
-    
-        <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/blog-page/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript" rel="5">JavaScript</a>
-    
-    
-    
-    <a href="/blog-page/tags/#前端基础" title="前端基础" rel="9">前端基础</a>
-    
-    
-    
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript" rel="5">ECMAScript</a>
-    
-    
-    
-    <a href="/blog-page/tags/#WebPack" title="WebPack" rel="1">WebPack</a>
-    
-    
-    
-    <a href="/blog-page/tags/#React Native" title="React Native" rel="2">React Native</a>
-    
-    
-    
-    <a href="/blog-page/tags/#React框架" title="React框架" rel="1">React框架</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/blog-page/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/blog-page/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/zpp-dev">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/同young不同样">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/blog-page/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../2021/03/06/9%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BWebpack/">
-      <li>9、前端基础之Webpack</li>
-    </a>
-    
-    <a href="../../../2021/03/06/8%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact-Native%EF%BC%88navigation%E5%AF%B9%E8%B1%A1%EF%BC%89/">
-      <li>8、前端基础之React Native（navigation对象）</li>
-    </a>
-    
-    <a href="../../../2021/03/06/7%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact-Native-Stack-Navigator/">
-      <li>7、前端基础之React Native(Stack Navigator)</li>
-    </a>
-    
-    <a href="../../../2021/03/06/6%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact-Hooks/">
-      <li>6、前端基础之React Hooks</li>
-    </a>
-    
-    <a href="../../../2021/03/06/5%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BJavaScript%E5%9F%BA%E7%A1%80/">
-      <li>5、前端基础之JavaScript基础</li>
-    </a>
-    
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=8、前端基础之React Native（navigation对象）&body=Hi,I found this website and thought you might like it https://zpp-dev.github.io/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <hr>
-    
-        <!-- Friends Blog -->
-
-
-        <hr>
-    
+        <!-- Sharing End -->
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/blog-page/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="">三月 2021</a><span class="archive-list-count">9</span></li></ul>
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Sat Mar 06 2021 11:41:01 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#navigation对象的方法"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">navigation对象的方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#使用NavigationEvents"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用NavigationEvents</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#react-navigation支持的导航的种类"><span class="toc-nav-number">2.0.1.</span> <span class="toc-nav-text">react-navigation支持的导航的种类</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/blog-page/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+            
+            <a class="tag" href="/blog-page/tags/#React Native" title="React Native">React Native</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
     </div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->

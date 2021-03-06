@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-xxxxxx-xx');
+  </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+  <script type="text/javascript">
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  <!-- Baidu Push -->
+  
+  <script>
+    (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="keyword" content="" />
+  <link rel="shortcut icon" href="/blog-page/img/avatar/favicon.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/blog-page/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog-page/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/blog-page/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/blog-page/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/blog-page/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/blog-page/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/blog-page/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/blog-page/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+  <!-- gitalk start -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+  <link rel="stylesheet" href="/blog-page/css/gitalk.css" />
+  <!-- gitalk end -->
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/2021/03/06/9、前端基础之Webpack/">
+  <title>
+    
+    9、前端基础之Webpack - 艾欧尼亚前端召唤师
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+	<!-- ThemeColor -->
+	
+	<!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+	
+
+	<!-- Gitter -->
+	
+	<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+	
+
+	<!-- Navigation (contains search)-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/blog-page/">艾欧尼亚前端召唤师</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/blog-page/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/blog-page/about/">关于</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/blog-page/archive/">归档</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/blog-page/categories/">目录</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/blog-page/tags/">标签</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+	<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('');
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+              
+              <a class="tag" href="/blog-page/tags/#WebPack" title="WebPack">WebPack</a>
+              
+            </div>
+            <h1>9、前端基础之Webpack</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 艾欧尼亚前端召唤师 on
+              2021-03-06
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">12</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+	<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h4 id="html-webpack-plugin插件"><a href="#html-webpack-plugin插件" class="headerlink" title="html-webpack-plugin插件"></a>html-webpack-plugin插件</h4><blockquote>
+<p>html-webpack-plugin插件作用</p>
+</blockquote>
+<ul>
+<li>为html文件中引入的外部资源如script、link动态添加每次compile后的hash，防止引用缓存的外部文件问题</li>
+<li>可以生成创建html入口文件，比如单页面可以生成一个html文件入口，配置N个html-webpack-plugin可以生成N个页面入口</li>
+</ul>
+<blockquote>
+<p>html-webpack-plugin配置项</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">    template: path.join(__dirname, <span class="string">'default_index.ejs'</span>),</span><br><span class="line">    filename: <span class="string">'index.html'</span>,</span><br><span class="line">    hash: <span class="literal">false</span>,</span><br><span class="line">    inject: <span class="literal">true</span>,</span><br><span class="line">    compile: <span class="literal">true</span>,</span><br><span class="line">    favicon: <span class="literal">false</span>,</span><br><span class="line">    minify: <span class="literal">false</span>,</span><br><span class="line">    cache: <span class="literal">true</span>,</span><br><span class="line">    showErrors: <span class="literal">true</span>,</span><br><span class="line">    chunks: <span class="string">'all'</span>,</span><br><span class="line">    excludeChunks: [],</span><br><span class="line">    title: <span class="string">'Webpack App'</span>,</span><br><span class="line">    xhtml: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>filename</code>: 文件的输出名称，默认值是index.html，不配置就是index.html。filename配置的html文件目录是相对于webpackConfig.output.path路径而言的，不是相对于当前项目目录结构的。指定生成的html文件内容中的link和script路径是相对于生成目录下的，写路径的时候请写生成目录下的相对路径。</li>
+<li><code>template</code>: 本地模板文件的位置。template配置项在html文件使用file-loader时，其所指定的位置找不到，导致生成的html文件内容不是期望的内容。为template指定的模板文件没有指定任何loader的话，默认使用ejs-loader。如template: ‘./index.html’，若没有为.html指定任何loader就使用ejs-loader。</li>
+<li><code>templateContent</code>: string|function，可以指定模板的内容，不能与template共存。配置值为function时，可以直接返回html字符串，也可以异步调用返回html字符串。</li>
+<li><code>inject</code>: 向template或者templateContent中注入所有静态资源，不同的配置值注入的位置不经相同。true或者body：所有JavaScript资源插入到body元素的底部。head: 所有JavaScript资源插入到head元素中。false： 所有静态资源css和JavaScript都不会注入到模板文件中。</li>
+<li><code>favicon</code>: 添加特定favicon路径到输出的html文档中，这个同title配置项，需要在模板中动态获取其路径值。</li>
+<li><code>hash</code>: true|false，是否为所有注入的静态资源添加webpack每次编译产生的唯一hash值。</li>
+<li><code>chunks</code>: 允许插入到模板中的一些chunk，不配置此项默认会将entry中所有的thunk注入到模板中。在配置多个页面时，每个页面注入的thunk应该是不相同的，需要通过该配置为不同页面注入不同的thunk。</li>
+<li><code>excludeChunks</code>: 这个与chunks配置项正好相反，用来配置不允许注入的thunk。</li>
+<li><code>chunksSortMode</code>: none | auto| function，默认auto； 允许指定的thunk在插入到html文档前进行排序。function值可以指定具体排序规则；auto基于thunk的id进行排序； none就是不排序。</li>
+<li><code>xhtml</code>: true|fasle, 默认false；是否渲染link为自闭合的标签，true则为自闭合标签。</li>
+<li><code>cache</code>: true|fasle, 默认true； 如果为true表示在对应的thunk文件修改后就会emit文件。</li>
+<li><code>showErrors</code>: rue|false，默认true；是否将错误信息输出到html页面中。这个很有用，在生成html文件的过程中有错误信息，输出到页面就能看到错误相关信息便于调试。</li>
+<li><code>minify</code>: {….}|false；传递 html-minifier 选项给 minify 输出，false就是不使用html压缩。</li>
+</ul>
+<h4 id="url-loader"><a href="#url-loader" class="headerlink" title="url-loader"></a>url-loader</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>{<br>    test: /.(png|gif|jpg|jpeg)/,<br>    use: [<br>        {<br>            loader: “url-loader”,<br>            options: {<br>                limit: 1000,//当图片小于1000bit的时候进行base64编码，当图片大于1000bit的时候不进行base64编码，大于limit限定的体积的时候图片会被file-loader处理<br>                name: [name].[ext], //打包之后的图片使用默认的名字并且文件后缀和打包之前一致<br>            }<br>        }<br>    ]<br>}</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### file-loader</span><br><span class="line"></span><br><span class="line">file-loader在Webpack中用于文件的打包和处理，比如：图片。file-loader使用方式：</span><br></pre></td></tr></table></figure>
+<p>{<br>    test: /.(png|jpg|gif|jpeg)/,<br>    use: [<br>        {<br>            loader: ‘file-loader’,<br>            options: {<br>                name: [name].[ext],//设置文件打包之后的命名规则<br>                context: “”,//配置文件的context<br>                publicPath: “asets/“, //为文件自定义的public发布目录<br>                outputPath: “images/“, //为打包之后的文件配置输出的目录</p>
+<pre><code>        }
+    }
+]</code></pre><p>}</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### clean-webpack-plugin</span><br><span class="line"></span><br><span class="line">&gt; 安装插件</span><br></pre></td></tr></table></figure>
+<p>npm install clean-webpack-plugin</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="quote">&gt; clean-webpack-plugin的使用方式</span></span><br></pre></td></tr></table></figure>
+<p>const CleanWebpackPlugin = require(“clean-webpack-plugin”);</p>
+<p>{<br>    rules: [<br>        new CleanWebpackPlugin([‘dist’]),//clean-webpack-plugin插件的作用是在打包之前删除dist目录下面的所有内容<br>    ]<br>}</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### sourceMap</span><br><span class="line"></span><br><span class="line">在webpack.config.js中配置devtool为sourceMap的时候，在打包的过程中会生成一个source-map的文件，这个文件里面存放是源代码与打包之后的代码的映射关系。当配置了source-map的时候代码打包的速度会变慢，如果配置为<span class="keyword">inline</span>-source-map的话，不会生成单独的source-map文件，而是把源文件与打包之后的文件代码的映射关系通过sourceMappingURL的方式写在打包之后的文件中的。</span><br><span class="line"></span><br><span class="line">#### 使用WebpackDevServer提升开发效率</span><br><span class="line"></span><br><span class="line">使用```webpack --watch```命令可以监听代码文件的改动，只要代码文件发生了改动，webpack就会自动将改动之后的代码进行再次打包，从而提升开发效率。需要安装一下webpack-dev-server：</span><br></pre></td></tr></table></figure>
+<p>npm install webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>{<br>    devServer: {<br>        contentBase: ‘./dist’, //配置webpack开启服务器的时候启动在哪一个文件夹下面。一般是打包之后生成文件所在的文件夹下面<br>        open: true, //open指的是当webpack开启一个服务器之后，会自动的打开默认的浏览器显示网页，并且浏览器会访问服务器的端口，不需要开发人员手动操作。<br>    }<br>}</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### Hot Module Replacement热模块更新</span><br><span class="line"></span><br><span class="line">在devServer的配置中可以设置hot属性为true，就可以开启webpack的热模块更新的功能了。引入HotModuleReplacementPlugin插件，进行配置：</span><br></pre></td></tr></table></figure>
+<p>const webpack = require(“webpack”);</p>
+<p>{<br>    devServer: {<br>        contentBase: ‘./dist’,<br>        open: true,<br>        hot: true, //开启热模块更新<br>        hotOnly: true, //开启热模块更新<br>    },<br>    plugins: [<br>        new webpack.HotModuleReplacement()<br>    ]<br>}</p>
+<figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果需要当文件发生改变的时候，只部分更新网页的内容，不是全部更新网页的内容，可以通过逻辑判断，让指定的需要更新的模块在代码改变之后重新加载就可以，webpack.config.js中的hot和hotOnly配置都为<span class="literal">true</span>，并且使用webpack.HotReplacementModulePlugin()。程序实例：</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">module</span>.hot)&#123;</span><br><span class="line">    <span class="built_in">module</span>.hot.accept(<span class="string">'./needHotReplaceModuleName'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        // 调用需要重新更新的模块中的代码</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用Babel处理ES6语法"><a href="#使用Babel处理ES6语法" class="headerlink" title="使用Babel处理ES6语法"></a>使用Babel处理ES6语法</h4><ul>
+<li>在项目中安装Babel依赖：</li>
+</ul>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install --save-dev babel-loader @babel/core</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在Webpack中配置使用Babel对ES6代码进行转换：</li>
+</ul>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">module:</span> &#123;</span><br><span class="line"><span class="symbol">  rules:</span> [</span><br><span class="line">    &#123; </span><br><span class="line"><span class="symbol">        test:</span> /\.js$/, <span class="comment">// 通过正则表达式匹配项目中的JS文件进行转换</span></span><br><span class="line"><span class="symbol">        exclude:</span> /node_modules/, <span class="comment">//配置Babel打包转换的时候不打包转换node_modules文件下面的第三方代码</span></span><br><span class="line"><span class="symbol">        loader:</span> <span class="string">"babel-loader"</span>  <span class="comment">//配置对于JS文件使用Babel进行打包和转换</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建一个.babelrc配置文件，写入Babel转换配置</li>
+</ul>
+<p>安装@babel/preset-env</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install @babel/preset-env --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>在webpack.config.js中配置使用@babel/preset-env</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123; </span><br><span class="line">        test: <span class="regexp">/\.js$/</span>, <span class="comment">// 通过正则表达式匹配项目中的JS文件进行转换</span></span><br><span class="line">        <span class="keyword">exclude</span>: <span class="regexp">/node_modules/</span>, <span class="comment">//配置Babel打包转换的时候不打包转换node_modules文件下面的第三方代码</span></span><br><span class="line">        loader: <span class="string">"babel-loader"</span>  <span class="comment">//配置对于JS文件使用Babel进行打包和转换</span></span><br><span class="line">        <span class="keyword">options</span>: &#123;</span><br><span class="line">            presets: [[<span class="string">"@babel/preset-env"</span>, &#123;</span><br><span class="line">                targets: &#123;</span><br><span class="line">                    chrome: <span class="string">"&gt;67"</span>, <span class="comment">//配置targets的目的是为了告知babel打包时需要兼容的浏览器版本，babel会根据配置的浏览器版本对代码做适当的兼容处理，对于一些支持ES6的浏览器甚至可以不用做转换的操作，可以提升打包的性能</span></span><br><span class="line">                &#125;,</span><br><span class="line">                useBuiltIns: <span class="string">'usage'</span></span><br><span class="line">            &#125;]]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [<span class="string">"@babel/preset-env"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用@babel/polyfill可以在babel打包的时候自动加入一些低版本浏览器需要的兼容代码。安装@babel/polyfill：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install --save @babel/polyfill</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"@babel/polyfill"</span>; <span class="regexp">//</span>在代码文件里面引入@babel/polyfill就可以让babel在打包的时候针对低版本的浏览器添加一些兼容的代码，使ES6的代码具有很好的支持度</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-babel-plugin-transform-runtime"><a href="#使用-babel-plugin-transform-runtime" class="headerlink" title="使用@babel/plugin-transform-runtime"></a>使用@babel/plugin-transform-runtime</h4><p>在编写一些库代码的时候，可以使用@babel/plugin-transform-runtime插件对代码进行转换，这个插件的好处是不会像@babel/polyfill那样造成打包之后的代码污染全局环境，而@babel/plugin-transform-runtime是以闭包的形式间接的引入针对低版本浏览器兼容的代码，可以保证不会因为库的代码打包影响全局环境的代码。</p>
+<ul>
+<li>安装@babel/plugin-transform-runtime</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> @babel/<span class="keyword">plugin</span>-transform-runtime <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用方式</li>
+</ul>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: /\.(<span class="name">js</span>|jsx)/,</span><br><span class="line">                exclude: /node_modules/,</span><br><span class="line">                loader: <span class="string">"babel-loader"</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    <span class="string">"plugins"</span>: [[<span class="string">"@babel/plugin-transform-runtime"</span>, &#123;</span><br><span class="line">                        <span class="string">"corejs"</span>: <span class="string">"2"</span>,</span><br><span class="line">                        <span class="string">"helpers"</span>: <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"regenerator"</span>: <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"useESModules"</span>: <span class="literal">false</span></span><br><span class="line">                    &#125;]]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用Webpack实现对Raect框架代码打包"><a href="#使用Webpack实现对Raect框架代码打包" class="headerlink" title="使用Webpack实现对Raect框架代码打包"></a>使用Webpack实现对Raect框架代码打包</h4><blockquote>
+<p>配置React代码的打包</p>
+</blockquote>
+<ul>
+<li>在项目中安装@babel/preset-react依赖</li>
+</ul>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install @babel/preset-react --save</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>@babel/preset-react插件的使用</li>
+</ul>
+<p>创建.babelrc文件，在文件中引入@babel/preset-react，程序实例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [<span class="string">"@babel/preset-react"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>Tree Shaking概念解析</p>
+</blockquote>
+<p>Tree Shaking是在webpack 2.0之后的版本中支持的，Tree Shaking的作用是让webpack在打包的时候按需打包，而不是将所有的代码全部打包。也就是说，业务代码里面真正被调用、引用的、起作用的代码才会被打包，那些声明了但是没有被调用或者引用的代码，在打包的时候是会被忽略的。这样做的好处是可以提升打包的速度，减小webpack打包之后的文件体积。Tree Shaking只支持ES Module的引用方式，不支持Common JS的引用方式。</p>
+<ul>
+<li>配置Tree Shaking</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">optimization</span>: &#123;</span><br><span class="line">        usedExports: true, // 在开发模式下，使用这个配置可以看出哪些代码模块被引用了</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还需要在package.json文件中添加一个配置：sideEffects，这个配置项用于配置Tree Shaking不需要处理的代码，设置为false表示没有不需要被Tree Shaking处理的代码，即所有的代码都需要被Tree Shaking处理。如果需要配置不被Tree Shaking处理的代码时可以把这个属性值改为一个字符串数组，数组里面一个字符串就是一个不需要被处理的模块的名称。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"project-name"</span>,</span><br><span class="line">    <span class="attr">"sideEffects"</span>: <span class="literal">false</span>, </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Webpack和Code Splitting (代码分割)</p>
+</blockquote>
+<p>通过合理的将代码分割，可以让webpack打包的效率提升。Webpack打包代码分割的配置，程序实例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">optimization</span>: &#123;</span><br><span class="line">    <span class="attribute">splitChunks</span>: &#123;</span><br><span class="line">        chunks: <span class="string">'all'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>webpack的代码分割分为两种情况：</p>
+<p>（1）同步代码分割只需要在webpack打包的配置文件中配置optimization就可以。<br>（2）异步的代码分割（import引入这种），不需要进行配置，webpack会自动把代码分割，打包到新的文件中。</p>
+<blockquote>
+<p>SplitChunksPlugin配置参数详解</p>
+</blockquote>
+<p>安装@babel/plugin-syntax-dynamic-import插件：</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev <span class="meta">@babel</span>/plugin-syntax-<span class="keyword">dynamic</span>-<span class="keyword">import</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在.babelrc文件中配置使用这个插件：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"plugins"</span>: [<span class="string">"@babel/plugin-syntax-dynamic-import"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在webpack打包的配置文件中配置代码分割插件的参数：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">optimization:</span> &#123;</span><br><span class="line"><span class="symbol">    splitChunks:</span> &#123;</span><br><span class="line"><span class="symbol">    chunks:</span> <span class="string">"async"</span>, <span class="comment">//async表示只对异步的代码进行分割，all表示对同步和异步的代码都进行分割</span></span><br><span class="line"><span class="symbol">    minSize:</span> <span class="number">30000</span>, <span class="comment">// minSize表示如果分割出来的代码小于minSize指定的大小时，则不进行代码分割</span></span><br><span class="line"><span class="symbol">    maxSize:</span> <span class="number">5000</span>, <span class="comment">// maxSize表示如果代码分割打包之后的体积大于maxSize的大小的话，webpack会尝试对打包之后的代码文件进行再次分割，以减小代码文件的体积</span></span><br><span class="line"><span class="symbol">    maxAsyncRequests:</span> <span class="number">5</span>, <span class="comment">// 限定最大的异步请求的数量，如果超过这个数，则超出的部分不会再进行代码分割</span></span><br><span class="line"><span class="symbol">    automaticNameDelimiter:</span> <span class="string">'~'</span>, <span class="comment">//设置生成文件名称之间的连接符</span></span><br><span class="line"><span class="symbol">    cacheGroups:</span> &#123;</span><br><span class="line"><span class="symbol">        vendors:</span> &#123;</span><br><span class="line"><span class="symbol">            test:</span> /[\\/]node_modules[\\/]/, <span class="comment">//正则表达式用于匹配在node_modules目录下面的依赖，如果匹配到了就符合vendors的处理方式</span></span><br><span class="line"><span class="symbol">            priority:</span> <span class="number">-10</span>,</span><br><span class="line"><span class="symbol">            filename:</span> <span class="string">"filename.js"</span>, <span class="comment">//配置代码分割打包之后的文件名称</span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="symbol">        default:</span> &#123;</span><br><span class="line"><span class="symbol">            minChunks:</span> <span class="number">2</span>,</span><br><span class="line"><span class="symbol">            priority:</span> <span class="number">-20</span>,</span><br><span class="line"><span class="symbol">            reuseExistingChunk:</span> true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Webpack的懒加载（Lazy-loading）和Chunk"><a href="#Webpack的懒加载（Lazy-loading）和Chunk" class="headerlink" title="Webpack的懒加载（Lazy loading）和Chunk"></a>Webpack的懒加载（Lazy loading）和Chunk</h4><p>懒加载可以把暂时不需要的，优先级低的内容，滞后加载，能提升前端的性能。</p>
+<h4 id="打包分析，Preloading，Prefetching"><a href="#打包分析，Preloading，Prefetching" class="headerlink" title="打包分析，Preloading，Prefetching"></a>打包分析，Preloading，Prefetching</h4><p>可以通过使用魔法注释的方式，让暂时不需要在第一次加载的模块，在浏览器空闲的时候进行预加载，程序实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>(<span class="comment">/*webpackPrefetch: true*/</span>, <span class="string">'./module.js'</span>); <span class="comment">// 这里的/*webpackPrefetch: true*/就是预加载的魔法注释</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>(<span class="comment">/*webpackPreload: true*/</span>, <span class="string">'./module.js'</span>); <span class="comment">// 这里的/*webpackPreload: true*/就是预加载的魔法注释</span></span><br></pre></td></tr></table></figure>
+
+<p>Prefetch是指当页面的核心代码加载完成之后，在浏览器有空闲的时候，会去加载代码。Preload会和页面的核心代码一起开始加载。所以在实际的开发过程中推荐使用Prefetch。</p>
+<h4 id="CSS文件的代码分割"><a href="#CSS文件的代码分割" class="headerlink" title="CSS文件的代码分割"></a>CSS文件的代码分割</h4><p>在webpack中使用MiniCssExtractPlugin插件可以对CSS文件进行分割。安装插件：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> mini-css-<span class="keyword">extract</span>-<span class="keyword">plugin</span> <span class="comment">--save-dev</span></span><br></pre></td></tr></table></figure>
+
+<p>在webpack打包的配置文件中配置这个插件的使用：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const MiniCssExtractPlugin = require(<span class="string">"mini-css-extract-plugin"</span>);</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"><span class="symbol">    plugins:</span> [</span><br><span class="line">        new MiniCssExtractPlugin(&#123;</span><br><span class="line"><span class="symbol">            filename:</span> <span class="string">"[name].css"</span>,</span><br><span class="line"><span class="symbol">            chunkFilename:</span> <span class="string">"[id].css"</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line"><span class="symbol">    module:</span> &#123;</span><br><span class="line"><span class="symbol">        rules:</span> [</span><br><span class="line">            &#123;</span><br><span class="line"><span class="symbol">                test:</span> /\.css$/,</span><br><span class="line"><span class="symbol">                use:</span> [</span><br><span class="line">                    &#123;</span><br><span class="line"><span class="symbol">                        loader:</span> MiniCssExtractPlugin.loader,</span><br><span class="line"><span class="symbol">                        options:</span> &#123;</span><br><span class="line"><span class="symbol">                            publicPath:</span> <span class="string">"/"</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"css-loader"</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/" data-toggle="tooltip" data-placement="top" title="8、前端基础之React Native（navigation对象）">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=9、前端基础之Webpack&body=Hi,I found this website and thought you might like it https://zpp-dev.github.io/blog-page/2021/03/06/9、前端基础之Webpack/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Sat Mar 06 2021 11:44:21 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#html-webpack-plugin插件"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">html-webpack-plugin插件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#url-loader"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">url-loader</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#使用Babel处理ES6语法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">使用Babel处理ES6语法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#使用-babel-plugin-transform-runtime"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">使用@babel&#x2F;plugin-transform-runtime</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#使用Webpack实现对Raect框架代码打包"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">使用Webpack实现对Raect框架代码打包</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Webpack的懒加载（Lazy-loading）和Chunk"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Webpack的懒加载（Lazy loading）和Chunk</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#打包分析，Preloading，Prefetching"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">打包分析，Preloading，Prefetching</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CSS文件的代码分割"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">CSS文件的代码分割</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/blog-page/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+            
+            <a class="tag" href="/blog-page/tags/#WebPack" title="WebPack">WebPack</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+	<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/zpp-dev">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/同young不同样">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          艾欧尼亚前端召唤师
+          2021
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/blog-page/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/blog-page/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/blog-page/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="/blog-page/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+
+  <!-- <script type="text/javascript" async="true" src="/blog-page/js/busuanzi.pure.mini.js"></script> -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/blog-page/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/blog-page/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/blog-page/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/blog-page/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://zpp-dev.github.io/blog-page/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+	<!-- Search -->
+	
+	<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/blog-page/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/blog-page/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/blog-page/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+	
+
+	<!-- Image to hack wechat -->
+	<!-- <img src="https://zpp-dev.github.io/blog-page/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
