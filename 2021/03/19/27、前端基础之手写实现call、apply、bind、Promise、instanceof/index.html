@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../css/highlight.css">
-<link rel="stylesheet" href="../../css/widget.css">
-<link rel="stylesheet" href="../../css/rocket.css">
-<link rel="stylesheet" href="../../css/signature.css">
-<link rel="stylesheet" href="../../css/catalog.css">
-<link rel="stylesheet" href="../../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/tags/React框架/">
+  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/2021/03/19/27、前端基础之手写实现call、apply、bind、Promise、instanceof/">
   <title>
     
-    艾欧尼亚前端召唤师
+    27、前端基础之手写实现call、apply、bind、Promise、instanceof - 艾欧尼亚前端召唤师
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -279,8 +279,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/blog-page/img/header_img/archive_bg2.jpg');
+       /*post*/
+        background-image: url('');
       
     }
 
@@ -298,10 +298,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>艾欧尼亚前端召唤师</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">技术，进无止境</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+              
+            </div>
+            <h1>27、前端基础之手写实现call、apply、bind、Promise、instanceof</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 艾欧尼亚前端召唤师 on
+              2021-03-19
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">676</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -342,654 +374,234 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <blockquote>
+<p>1、手写call、apply和bind函数</p>
+</blockquote>
+<h6 id="手写call-函数："><a href="#手写call-函数：" class="headerlink" title="手写call()函数："></a>手写call()函数：</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Error"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    context = context || <span class="built_in">window</span>;</span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">const</span> args = [...arguments].slice(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">const</span> result = context.fn(...args);</span><br><span class="line">    <span class="keyword">delete</span> context.fn;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<h6 id="手写apply-函数"><a href="#手写apply-函数" class="headerlink" title="手写apply()函数"></a>手写apply()函数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Error"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    context = context || <span class="built_in">window</span>;</span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> result;</span><br><span class="line">    <span class="comment">//处理参数和call有区别</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>[<span class="number">1</span>])&#123;</span><br><span class="line">        result = context.fn(...arguments[<span class="number">1</span>]);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        result = context.fn();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> context.fn;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
+<h6 id="手写bind-方法"><a href="#手写bind-方法" class="headerlink" title="手写bind()方法"></a>手写bind()方法</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Error"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">const</span> args = [...arguments].slice(<span class="number">1</span>);</span><br><span class="line">    <span class="comment">//返回一个函数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span> <span class="keyword">instanceof</span> F)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> _this(...args, ...arguments);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> _this.apply(context, args.concat(...arguments));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <!-- 归档列表 -->
+<blockquote>
+<p>2、new</p>
+</blockquote>
+<p>new的原理是什么？通过new关键字创建对象和通过字面量创建对象有什么区别？</p>
+<p>在调用new关键字创建对象的时候，会经历一下四个过程：</p>
+<ul>
+<li>新生成了一个对象</li>
+<li>将对象链接到原型</li>
+<li>绑定this</li>
+<li>返回新对象</li>
+</ul>
+<h6 id="手写实现new-方法"><a href="#手写实现new-方法" class="headerlink" title="手写实现new()方法"></a>手写实现new()方法</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> Con = [].shift.call(<span class="built_in">arguments</span>);</span><br><span class="line">    obj.__proto__ = Con.prototype;</span><br><span class="line">    <span class="keyword">let</span> result = Con.apply(obj, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">return</span> result <span class="keyword">instanceof</span> <span class="built_in">Object</span> ? result : obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="该方法的实现过程分析"><a href="#该方法的实现过程分析" class="headerlink" title="该方法的实现过程分析"></a>该方法的实现过程分析</h6><ul>
+<li>创建一个空对象</li>
+<li>获取构造函数</li>
+<li>设置空对象的原型</li>
+<li>绑定this并执行构造函数</li>
+<li>确保返回值为对象</li>
+</ul>
+<blockquote>
+<p>3、instanceof原理</p>
+</blockquote>
+<p>手写实现instanceof：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myInstanceof</span>(<span class="params">left, right</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> prototype = right.prototype;</span><br><span class="line">    left = left.__proto__;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(left === <span class="literal">null</span> || left === <span class="literal">undefined</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">         <span class="keyword">if</span>(prototype === left)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        left = left.__proto__;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+<p>实现过程分析：</p>
+<ul>
+<li>首先获取类型的原型</li>
+<li>然后获取对象的原型</li>
+<li>然后一直循环判断对象的原型是否等于类型的原型，直到对象的原型为null，因为原型链最终的终点就是null.</li>
+</ul>
+<blockquote>
+<p>4、手写实现Promise</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PENDING = <span class="string">"pending"</span>;</span><br><span class="line"><span class="keyword">const</span> RESOLVED = <span class="string">"resolved"</span>;</span><br><span class="line"><span class="keyword">const</span> REJECTED = <span class="string">"rejected"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyPromise</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">this</span>.state = PENDING; <span class="comment">// 一开始Promise的状态是pending</span></span><br><span class="line">    <span class="keyword">this</span>.value = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * resolvedCallbacks和rejectedCallbacks用于保存then中的回调函数，因为当Promise执行完之后的状态可能仍然是pending，</span></span><br><span class="line"><span class="comment">    *所以需要把then中的回调保存起来，用于改变状态的时候使用</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    that.resolvedCallbacks = [];</span><br><span class="line">    that.rejectedCallbacks = [];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// resolve方法</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(that.state === PENDING)&#123;</span><br><span class="line">            that.state = RESOLVED;  <span class="comment">//修改状态为resolved</span></span><br><span class="line">            that.value = value;</span><br><span class="line">            that.resolvedCallbacks.map(<span class="function"><span class="params">cb</span> =&gt;</span> cb(that.value));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// reject方法</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(that.state === PENDING)&#123;</span><br><span class="line">            that.state = REJECTED; <span class="comment">//修改状态为reject</span></span><br><span class="line">            that.value = value;</span><br><span class="line">            that.rejectedCallbacks.map(<span class="function"><span class="params">cb</span> =&gt;</span> cb(that.value));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//then方法</span></span><br><span class="line">MyPromise.prototype.then = <span class="function"><span class="keyword">function</span>(<span class="params">onFulfilled, onRejected</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span>;</span><br><span class="line">    onFulfilled = <span class="keyword">typeof</span> onFulfilled === <span class="string">"function"</span> ? onFulfilled : <span class="function"><span class="params">v</span> =&gt;</span> v;</span><br><span class="line">    onRejected = <span class="keyword">typeof</span> onRejected === <span class="string">"function"</span> ? onRejected : <span class="function"><span class="params">r</span> =&gt;</span> &#123; <span class="keyword">throw</span> r &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(that.state === PENDING)&#123;</span><br><span class="line">        that.resolvedCallbacks.push(onFulfilled);</span><br><span class="line">        that.rejectedCallbacks.push(onRejected);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(that.state === RESOLVED)&#123;</span><br><span class="line">        onFulfilled(that.value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(that.state === REJECTED)&#123;</span><br><span class="line">        onRejected(that.value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/20/28、前端基础之React、CSS相关/" style="color: #0085a1">
-              <span>
-                28、前端基础之React、CSS相关
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="previous">
+            <a href="/blog-page/2021/03/20/28、前端基础之React、CSS相关/" data-toggle="tooltip" data-placement="top" title="28、前端基础之React、CSS相关">&larr; Previous Post</a>
           </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/19/27、前端基础之手写实现call、apply、bind、Promise、instanceof/" style="color: #0085a1">
-              <span>
-                27、前端基础之手写实现call、apply、bind、Promise、instanceof
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/19/26、前端基础之Flex布局/" style="color: #0085a1">
-              <span>
-                26、前端基础之Flex布局
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/14/25、前端基础之JavaScript事件循环、微任务和宏任务/" style="color: #0085a1">
-              <span>
-                25、前端基础之JavaScript事件循环、微任务和宏任务
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/24、前端基础之ES6（Class类）/" style="color: #0085a1">
-              <span>
-                24、前端基础之ES6（Class类）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/23、前端基础之ES6（Generator函数）/" style="color: #0085a1">
-              <span>
-                23、前端基础之ES6（Generator函数）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/22、前端基础之ES6（Iterator迭代器）/" style="color: #0085a1">
-              <span>
-                22、前端基础之ES6（Iterator迭代器）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/21、前端基础之ES6（Promise）/" style="color: #0085a1">
-              <span>
-                21、前端基础之ES6（Promise）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/20、前端基础之ES6（Proxy代理）/" style="color: #0085a1">
-              <span>
-                20、前端基础之ES6（Proxy代理）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/19、前端基础之ES6（Map和Set）/" style="color: #0085a1">
-              <span>
-                19、前端基础之ES6（Map和Set）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/18、前端基础之ES6（Symbol）/" style="color: #0085a1">
-              <span>
-                18、前端基础之ES6（Symbol）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/17、前端基础之ES6（对象的新增方法）/" style="color: #0085a1">
-              <span>
-                17、前端基础之ES6（对象的新增方法）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/16、前端基础之ES6（对象的扩展）/" style="color: #0085a1">
-              <span>
-                16、前端基础之ES6（对象的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/15、前端基础之ES6（数组的扩展）/" style="color: #0085a1">
-              <span>
-                15、前端基础之ES6（数组的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/14、前端基础之ES6（函数的扩展）/" style="color: #0085a1">
-              <span>
-                14、前端基础之ES6（函数的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/13、前端基础之ES6（数值的扩展）/" style="color: #0085a1">
-              <span>
-                13、前端基础之ES6（数值的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/12、前端基础之ES6（正则的扩展）/" style="color: #0085a1">
-              <span>
-                12、前端基础之ES6（正则的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/11、前端基础之ES6（解构赋值）/" style="color: #0085a1">
-              <span>
-                11、前端基础之ES6（解构赋值）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/10、前端基础之ES6（let和const命令）/" style="color: #0085a1">
-              <span>
-                10、前端基础之ES6（let和const命令）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/9、前端基础之Webpack/" style="color: #0085a1">
-              <span>
-                9、前端基础之Webpack
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/" style="color: #0085a1">
-              <span>
-                8、前端基础之React Native（navigation对象）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/7、前端基础之React-Native-Stack-Navigator/" style="color: #0085a1">
-              <span>
-                7、前端基础之React Native(Stack Navigator)
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/6、前端基础之React-Hooks/" style="color: #0085a1">
-              <span>
-                6、前端基础之React Hooks
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/5、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                5、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/4、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                4、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/3、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                3、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/2、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                2、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/前端基础（1）JavaScript基础/" style="color: #0085a1">
-              <span>
-                1、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="next">
+            <a href="/blog-page/2021/03/19/26、前端基础之Flex布局/" data-toggle="tooltip" data-placement="top" title="26、前端基础之Flex布局">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Fri Mar 19 2021 23:58:06 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
-        <!--   -->
-<h5><a href="/blog-page/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-<!--   -->
-
-        <hr>
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#手写call-函数："><span class="toc-nav-number">1.</span> <span class="toc-nav-text">手写call()函数：</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#手写apply-函数"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">手写apply()函数</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#手写bind-方法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">手写bind()方法</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#手写实现new-方法"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">手写实现new()方法</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#该方法的实现过程分析"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">该方法的实现过程分析</span></a></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/blog-page/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript" rel="5">JavaScript</a>
-    
-    
-    
-    <a href="/blog-page/tags/#前端基础" title="前端基础" rel="28">前端基础</a>
-    
-    
-    
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript" rel="5">ECMAScript</a>
-    
-    
-    
-    <a href="/blog-page/tags/#WebPack" title="WebPack" rel="1">WebPack</a>
-    
-    
-    
-    <a href="/blog-page/tags/#React Native" title="React Native" rel="2">React Native</a>
-    
-    
-    
-    <a href="/blog-page/tags/#React框架" title="React框架" rel="1">React框架</a>
-    
-    
-    
-    <a href="/blog-page/tags/#ES6" title="ES6" rel="15">ES6</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/blog-page/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/blog-page/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/zpp-dev">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/同young不同样">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/blog-page/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../2021/03/20/28%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact%E3%80%81CSS%E7%9B%B8%E5%85%B3/">
-      <li>28、前端基础之React、CSS相关</li>
-    </a>
-    
-    <a href="../../2021/03/19/27%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0call%E3%80%81apply%E3%80%81bind%E3%80%81Promise%E3%80%81instanceof/">
-      <li>27、前端基础之手写实现call、apply、bind、Promise、instanceof</li>
-    </a>
-    
-    <a href="../../2021/03/19/26%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BFlex%E5%B8%83%E5%B1%80/">
-      <li>26、前端基础之Flex布局</li>
-    </a>
-    
-    <a href="../../2021/03/14/25%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BJavaScript%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%AE%8F%E4%BB%BB%E5%8A%A1/">
-      <li>25、前端基础之JavaScript事件循环、微任务和宏任务</li>
-    </a>
-    
-    <a href="../../2021/03/06/24%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BES6%EF%BC%88Class%E7%B1%BB%EF%BC%89/">
-      <li>24、前端基础之ES6（Class类）</li>
-    </a>
-    
-  </ul>
-</div>
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/blog-page/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+            
+          </div>
+        </section>
+        
 
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-
-        <hr>
-    
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/blog-page/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/03/">三月 2021</a><span class="archive-list-count">28</span></li></ul>
+      </div>
     </div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
