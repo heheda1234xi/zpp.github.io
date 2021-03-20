@@ -382,7 +382,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="一、前端缓存的分类和作用"><a href="#一、前端缓存的分类和作用" class="headerlink" title="一、前端缓存的分类和作用"></a>一、前端缓存的分类和作用</h1><h2 id="（1）缓存的分类"><a href="#（1）缓存的分类" class="headerlink" title="（1）缓存的分类"></a>（1）缓存的分类</h2><p>前端缓存分为：<code>HTTP缓存</code>和<code>浏览器缓存</code>。HTTP缓存是指在HTTP请求过程中会使用的缓存，HTTP缓存相关的设置是在服务端的代码里进行设置的。浏览器端的缓存是通过前端JavaScript代码进行设置的。</p>
+        <h1 id="一、前端缓存的分类和作用"><a href="#一、前端缓存的分类和作用" class="headerlink" title="一、前端缓存的分类和作用"></a>一、前端缓存的分类和作用</h1><h2 id="（1）缓存的分类"><a href="#（1）缓存的分类" class="headerlink" title="（1）缓存的分类"></a>（1）缓存的分类</h2><p>前端缓存分为：<code>HTTP缓存</code>和<code>浏览器缓存</code>。HTTP缓存是指在HTTP请求过程中会使用的缓存，HTTP缓存相关的设置是在服务端的代码里进行设置的。浏览器端的缓存是通过前端JavaScript代码进行设置的。<br><img src="https://upload-images.jianshu.io/upload_images/13277068-efe830b68127838c.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp"/></p>
 <h2 id="（2）缓存的作用"><a href="#（2）缓存的作用" class="headerlink" title="（2）缓存的作用"></a>（2）缓存的作用</h2><p>合理的缓存策略可以提高系统的整体性能，加快响应速度，提升用户体验。把一些不需要重复请求的数据放在缓存里面，需要使用的时候直接从缓存中读取，可以减少不必要的请求，降低网络带宽的占用率。</p>
 <h1 id="二、HTTP缓存的过程"><a href="#二、HTTP缓存的过程" class="headerlink" title="二、HTTP缓存的过程"></a>二、HTTP缓存的过程</h1><p>浏览器第一次向服务器发请求，得到服务端的响应之后，会根据响应报文中的缓存标识，决定是否把本次的请求结果存入缓存。浏览器缓存了响应结果之后，当浏览器再次发送HTTP请求的时候，会先从缓存中读取数据，如果浏览器没有读取到缓存的数据或者没有缓存标识，则会直接向服务端发请求获取数据。</p>
 <h1 id="三、强制缓存"><a href="#三、强制缓存" class="headerlink" title="三、强制缓存"></a>三、强制缓存</h1><p>强制缓存的三种情况：</p>
