@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/tags/ES6/archives/2/">
+  <link rel="canonical" href="https://zpp-dev.github.io/blog-page/2021/03/20/29、前端基础之HTTP-keep-alive/">
   <title>
     
-    艾欧尼亚前端召唤师
+    29、前端基础之HTTP keep-alive - 艾欧尼亚前端召唤师
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -279,8 +279,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/blog-page/img/header_img/archive_bg2.jpg');
+       /*post*/
+        background-image: url('');
       
     }
 
@@ -298,10 +298,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>艾欧尼亚前端召唤师</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">技术，进无止境</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+              
+              <a class="tag" href="/blog-page/tags/#HTTP" title="HTTP">HTTP</a>
+              
+            </div>
+            <h1>29、前端基础之HTTP keep-alive</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 艾欧尼亚前端召唤师 on
+              2021-03-20
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">2</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">662</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -342,673 +376,195 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1 id="HTTP-keep-alive"><a href="#HTTP-keep-alive" class="headerlink" title="HTTP keep-alive"></a>HTTP keep-alive</h1><h2 id="一、keep-alive的作用"><a href="#一、keep-alive的作用" class="headerlink" title="一、keep-alive的作用"></a>一、keep-alive的作用</h2><p>在早期的HTTP/1.0中，每一次HTTP请求的时候都会创建一个链接，实现客户端与服务端的通信。但是创建HTTP请求会消耗资源和时间，为了减少资源和时间的消耗，就提出了重用HTTP链接机制，即一个HTTP链接请求完成之后，不关闭HTTP链接，而是在下一次的相同的请求中继续使用之前已经创建好的HTTP链接。</p>
+<p>为了实现HTTP链接的重用，所以在http请求头中加入了<code>Connection: keep-alive</code>参数来告诉服务端当前http请求完成之后不要关闭链接。在HTTP/1.0版本中需要明确加入<code>Connection: keep-alive</code>参数，在后续的HTTP/1.1版本中默认支持重用链接，可以不明确指定参数。</p>
+<p>如果客户端不希望使用链接重用机制，只需要在请求头中加入<code>Connection: close</code>参数即可。当服务端接收到这个参数就会在一次请求完成之后关闭HTTP链接。</p>
+<h2 id="二、长链接会一直保持吗"><a href="#二、长链接会一直保持吗" class="headerlink" title="二、长链接会一直保持吗"></a>二、长链接会一直保持吗</h2><p>HTTP长链接不会一直保持下去，即使设置了<code>Connection: keep-alive</code>参数也不会。因为在服务端的代码中一般会设置一个超时时间，当一个请求的响应时间超过了这个超时时间，则服务端会自动关闭这个超时的HTTP链接。</p>
+<p>服务端还会设置一个最大请求数，当同一个HTTP链接的请求次数超过最大请求数时，即使请求的时间没有超时也会关闭这个HTTP链接。</p>
+<h2 id="三、Content-Length"><a href="#三、Content-Length" class="headerlink" title="三、Content-Length"></a>三、Content-Length</h2><p>当一个长链接请求完成之后，服务端和客户端会通过判定<code>Content-Length</code>来关闭本次的HTTP长链接。<code>Content-Length</code>表示请求响应体的数据大小，例如<code>Content-Length:200</code>表示响应的内容有200个字节大小。</p>
+<p><code>Content-Length</code>必须是响应体的真实长度，为了获得这个响应体的长度可以先划分出一个足够大的内存空间，等内容全部生成好之后再计算内容的实际大小，这样的方式会增加内存消耗，增加服务端等待的时间。所以在实际的使用中是将数据分块传输给服务端，通过在响应头中加入参数<code>Transfer-Encoding: chunked</code>，表示数据是分块传输的，服务端可以分多次对客户端请求作出响应，当客户端接收到全部的数据内容之后就会结束长链接。</p>
 
-      
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/20/29、前端基础之HTTP-keep-alive/" style="color: #0085a1">
-              <span>
-                29、前端基础之HTTP keep-alive
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/20/28、前端基础之React、CSS相关/" style="color: #0085a1">
-              <span>
-                28、前端基础之React、CSS相关
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/19/27、前端基础之手写实现call、apply、bind、Promise、instanceof/" style="color: #0085a1">
-              <span>
-                27、前端基础之手写实现call、apply、bind、Promise、instanceof
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/19/26、前端基础之Flex布局/" style="color: #0085a1">
-              <span>
-                26、前端基础之Flex布局
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/14/25、前端基础之JavaScript事件循环、微任务和宏任务/" style="color: #0085a1">
-              <span>
-                25、前端基础之JavaScript事件循环、微任务和宏任务
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/24、前端基础之ES6（Class类）/" style="color: #0085a1">
-              <span>
-                24、前端基础之ES6（Class类）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/23、前端基础之ES6（Generator函数）/" style="color: #0085a1">
-              <span>
-                23、前端基础之ES6（Generator函数）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/22、前端基础之ES6（Iterator迭代器）/" style="color: #0085a1">
-              <span>
-                22、前端基础之ES6（Iterator迭代器）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/21、前端基础之ES6（Promise）/" style="color: #0085a1">
-              <span>
-                21、前端基础之ES6（Promise）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/20、前端基础之ES6（Proxy代理）/" style="color: #0085a1">
-              <span>
-                20、前端基础之ES6（Proxy代理）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/19、前端基础之ES6（Map和Set）/" style="color: #0085a1">
-              <span>
-                19、前端基础之ES6（Map和Set）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/18、前端基础之ES6（Symbol）/" style="color: #0085a1">
-              <span>
-                18、前端基础之ES6（Symbol）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/17、前端基础之ES6（对象的新增方法）/" style="color: #0085a1">
-              <span>
-                17、前端基础之ES6（对象的新增方法）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/16、前端基础之ES6（对象的扩展）/" style="color: #0085a1">
-              <span>
-                16、前端基础之ES6（对象的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/15、前端基础之ES6（数组的扩展）/" style="color: #0085a1">
-              <span>
-                15、前端基础之ES6（数组的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/14、前端基础之ES6（函数的扩展）/" style="color: #0085a1">
-              <span>
-                14、前端基础之ES6（函数的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/13、前端基础之ES6（数值的扩展）/" style="color: #0085a1">
-              <span>
-                13、前端基础之ES6（数值的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/12、前端基础之ES6（正则的扩展）/" style="color: #0085a1">
-              <span>
-                12、前端基础之ES6（正则的扩展）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/11、前端基础之ES6（解构赋值）/" style="color: #0085a1">
-              <span>
-                11、前端基础之ES6（解构赋值）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/10、前端基础之ES6（let和const命令）/" style="color: #0085a1">
-              <span>
-                10、前端基础之ES6（let和const命令）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/9、前端基础之Webpack/" style="color: #0085a1">
-              <span>
-                9、前端基础之Webpack
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/8、前端基础之React-Native（navigation对象）/" style="color: #0085a1">
-              <span>
-                8、前端基础之React Native（navigation对象）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/7、前端基础之React-Native-Stack-Navigator/" style="color: #0085a1">
-              <span>
-                7、前端基础之React Native(Stack Navigator)
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/6、前端基础之React-Hooks/" style="color: #0085a1">
-              <span>
-                6、前端基础之React Hooks
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/5、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                5、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/4、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                4、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/3、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                3、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/2、前端基础之JavaScript基础/" style="color: #0085a1">
-              <span>
-                2、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/blog-page/2021/03/06/前端基础（1）JavaScript基础/" style="color: #0085a1">
-              <span>
-                1、前端基础之JavaScript基础
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="next">
+            <a href="/blog-page/2021/03/20/28、前端基础之React、CSS相关/" data-toggle="tooltip" data-placement="top" title="28、前端基础之React、CSS相关">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Sat Mar 20 2021 12:42:44 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
-        <!--   -->
-<h5><a href="/blog-page/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-<!--   -->
-
-        <hr>
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HTTP-keep-alive"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">HTTP keep-alive</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、keep-alive的作用"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、keep-alive的作用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、长链接会一直保持吗"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、长链接会一直保持吗</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、Content-Length"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、Content-Length</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/blog-page/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/blog-page/tags/#JavaScript" title="JavaScript" rel="5">JavaScript</a>
-    
-    
-    
-    <a href="/blog-page/tags/#前端基础" title="前端基础" rel="29">前端基础</a>
-    
-    
-    
-    <a href="/blog-page/tags/#ECMAScript" title="ECMAScript" rel="5">ECMAScript</a>
-    
-    
-    
-    <a href="/blog-page/tags/#WebPack" title="WebPack" rel="1">WebPack</a>
-    
-    
-    
-    <a href="/blog-page/tags/#React Native" title="React Native" rel="2">React Native</a>
-    
-    
-    
-    <a href="/blog-page/tags/#React框架" title="React框架" rel="1">React框架</a>
-    
-    
-    
-    <a href="/blog-page/tags/#ES6" title="ES6" rel="15">ES6</a>
-    
-    
-    
-    <a href="/blog-page/tags/#HTTP" title="HTTP" rel="1">HTTP</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/blog-page/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/blog-page/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/zpp-dev">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/同young不同样">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/blog-page/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../../2021/03/20/29%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BHTTP-keep-alive/">
-      <li>29、前端基础之HTTP keep-alive</li>
-    </a>
-    
-    <a href="../../../../2021/03/20/28%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BReact%E3%80%81CSS%E7%9B%B8%E5%85%B3/">
-      <li>28、前端基础之React、CSS相关</li>
-    </a>
-    
-    <a href="../../../../2021/03/19/27%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0call%E3%80%81apply%E3%80%81bind%E3%80%81Promise%E3%80%81instanceof/">
-      <li>27、前端基础之手写实现call、apply、bind、Promise、instanceof</li>
-    </a>
-    
-    <a href="../../../../2021/03/19/26%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BFlex%E5%B8%83%E5%B1%80/">
-      <li>26、前端基础之Flex布局</li>
-    </a>
-    
-    <a href="../../../../2021/03/14/25%E3%80%81%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BJavaScript%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%AE%8F%E4%BB%BB%E5%8A%A1/">
-      <li>25、前端基础之JavaScript事件循环、微任务和宏任务</li>
-    </a>
-    
-  </ul>
-</div>
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/blog-page/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/blog-page/tags/#前端基础" title="前端基础">前端基础</a>
+            
+            <a class="tag" href="/blog-page/tags/#HTTP" title="HTTP">HTTP</a>
+            
+          </div>
+        </section>
+        
 
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-
-        <hr>
-    
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/blog-page/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/03/">三月 2021</a><span class="archive-list-count">29</span></li></ul>
+      </div>
     </div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
